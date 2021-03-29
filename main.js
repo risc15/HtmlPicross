@@ -5,8 +5,8 @@ function draw() {
   // Read from file and set the below accordingly:
   const height = 800;
   const width = 800;
-  const cellWidth = 8;
-  const cellHeight = 8;
+  const cellWidth = 15;
+  const cellHeight = 15;
 
   // Set canvas dimensions:
   canvas.height = height;
@@ -27,16 +27,34 @@ function draw() {
   // Draw rectangles above the grid:
   x = width/2;
   y = 0
+
   for (let i = 0; i < cellWidth; i++) {
-    ctx.strokeRect(x,y, (width/cellWidth) / 2, height / 2);
+    if (i % 2 === 0) {
+      ctx.strokeRect(x,y, (width/cellWidth) / 2, height / 2);
+    } else {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(x,y, (width/cellWidth) / 2, height / 2);
+      ctx.fillStyle = '#CAE5FF';
+      ctx.fillRect(x + 1,y + 1, ((width/cellWidth) / 2) - 2, (height / 2) - 2);
+    }
+    
     x += (width/cellWidth) /2;
   }
 
   // Draw rectangles to the left of the grid:
   x = 0;
   y = height/2;
+
   for (let i = 0; i < cellHeight; i++) {
-    ctx.strokeRect(x,y, width / 2, (height/cellHeight) /2);
+    if (i % 2 === 0) {
+      ctx.strokeRect(x,y, width / 2, (height/cellHeight) /2);
+    } else {
+      ctx.fillStyle = '#000000';
+      ctx.fillRect(x,y, width / 2, (height/cellHeight) /2);
+      ctx.fillStyle = '#CAE5FF';
+      ctx.fillRect(x + 1,y + 1, (width / 2) - 2, ((height/cellHeight) /2) - 2);
+    }
+
     y += (height/cellHeight) / 2;
   }
 
