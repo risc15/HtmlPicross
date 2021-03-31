@@ -5,20 +5,33 @@
 
 body {
   background-color: antiquewhite;
-	background-image: url("images/dark_dimension.png");
+	background-image: url("images/dimension.png");
 	animation: animatedBackground 5s linear infinite; /* This is how long it will take to get to the specified background-position. */
   }
-
-canvas {
-  border: 0px solid black;
-  background-color: white;
-  position: relative;
-}
 
 #header {
   background-color: IndianRed;
 }
 
-#content {
+#container1 {
+}
 
+.canvas {
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+}
+
+#debug {
+  position: absolute;
+  left: 0; 
+}
+
+#canvasBottom {
+  background-color: white;
+}
+
+#canvasTop {
 }
